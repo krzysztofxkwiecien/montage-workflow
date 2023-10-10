@@ -26,10 +26,10 @@ images: image-workflow-data
 image-workflow-data:
 	echo "*" > .dockerignore
 	echo "!$(WORKFLOW_DIR)" >> .dockerignore
-	docker build --squash --build-arg WORKFLOW_DIR=$(WORKFLOW_DIR) --build-arg WORKFLOW_DEGREE=$(WORKFLOW_DEGREE) --build-arg NUMBER_OF_TASKS=$(NUMBER_OF_TASKS) -t doogfood/data:1.0.0 . # Build new image and automatically tag it as latest
+	docker build --squash --build-arg WORKFLOW_DIR=$(WORKFLOW_DIR) --build-arg WORKFLOW_DEGREE=$(WORKFLOW_DEGREE) --build-arg NUMBER_OF_TASKS=$(NUMBER_OF_TASKS) -t aghkkwiecien/data:1.0.0 . # Build new image and automatically tag it as latest
 
 push-workflow-data: image-workflow-data
-	docker push doogfood/data:1.0.0 # Push image tagged as latest to repository
+	docker push aghkkwiecien/data:1.0.0 # Push image tagged as latest to repository
 
 clean:
 	rm .dockerignore
